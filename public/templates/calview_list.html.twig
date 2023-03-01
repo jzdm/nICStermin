@@ -1,0 +1,62 @@
+<div>
+{% for month in events %}
+	<table class="table-fixed">
+		<thead>
+			<tr>
+				<th style="width:15%;" class="px-0 py-2 text-left"><h3>{{ month.month_name }} {{month.year}}</h3></th>
+				<th style="width:25%;"></th>
+				<th style="width:60%;"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for days in month.events %}
+			{% for event in days %}
+				{# emphasize entries in main calendar #}
+				{% set emphasizer = ['',''] %}
+				{% set emphasized = false %}
+				{#% if event.calendar_title == "Calendartitle" %}
+					{% set emphasizer = ['<strong>','</strong>'] %}
+					{% set emphasized = true %}
+				{% endif %#}
+			
+				{% set dayNumber =  (event.dtstart|date('N')) - 1 %}
+				<tr class="even:bg-gray-100 align-top">
+					<td class="border border-slate-300">
+						<div class="px-4 py-2">
+							<div class="inline-block w-4">{{dayNamesShort[dayNumber]}}</div>
+							<div class="inline-block">{{event.dtstart|date('d.m.')}}</div>
+						</div>
+					</td>
+					<td class="border border-slate-300 px-4 py-2">
+						{# column: start/end time #}
+						{% if event.allday %}
+							{{str_AllDayEvent}}
+						{% else %}
+							{{event.dtstart|date('H:i')}} {% if not emphasized %}- {{event.dtend|date('H:i')}} {% endif %}Uhr
+						{% endif %}
+					</td>
+					<td class="border border-slate-300 px-4 py-2">
+						<div class="group">
+							<div class="flex justify-between">
+								<div>{{emphasizer[0]|raw}}{{event.summary|raw}}{{emphasizer[1]|raw}}</div>
+							</div>
+							{% set spacer = false %}
+							{% if event.description|length %}
+								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><i class="fas fa-info-circle  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.description}}</div>
+								{% set spacer = true %}
+							{% endif %}
+							{% if event.url|length %}
+								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><a href="{{event.url}}" target="_blank"><i class="fas fa-external-link-alt  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.url}}</a></div>
+							{% endif %}
+							{% if event.location|length %}
+								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><i class="fas fa-map-marker-alt  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.location | raw}}</div>
+							{% endif %}
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+			{% endfor %}
+		</tbody>
+	</table>
+{% endfor %}
+</div>

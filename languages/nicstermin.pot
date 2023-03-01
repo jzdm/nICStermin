@@ -1,0 +1,296 @@
+# Copyright (C) 2023 jzdm
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: nICStermin 0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/nicstermin\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2023-03-01T19:04:40+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.7.1\n"
+"X-Domain: nicstermin\n"
+
+#. Plugin Name of the plugin
+#: dist/includes/settings.php:18
+#: dist/includes/settings.php:19
+#: includes/settings.php:18
+#: includes/settings.php:19
+msgid "nICStermin"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://nicstermin.de"
+msgstr ""
+
+#. Description of the plugin
+msgid "ICS calendar subscription and display on WordPress websites"
+msgstr ""
+
+#. Author of the plugin
+msgid "jzdm"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://jzdm.de"
+msgstr ""
+
+#: dist/includes/calendars.php:234
+#: includes/calendars.php:234
+msgid "January"
+msgstr ""
+
+#: dist/includes/calendars.php:235
+#: includes/calendars.php:235
+msgid "February"
+msgstr ""
+
+#: dist/includes/calendars.php:236
+#: includes/calendars.php:236
+msgid "March"
+msgstr ""
+
+#: dist/includes/calendars.php:237
+#: includes/calendars.php:237
+msgid "April"
+msgstr ""
+
+#: dist/includes/calendars.php:238
+#: includes/calendars.php:238
+msgid "May"
+msgstr ""
+
+#: dist/includes/calendars.php:239
+#: includes/calendars.php:239
+msgid "June"
+msgstr ""
+
+#: dist/includes/calendars.php:240
+#: includes/calendars.php:240
+msgid "July"
+msgstr ""
+
+#: dist/includes/calendars.php:241
+#: includes/calendars.php:241
+msgid "August"
+msgstr ""
+
+#: dist/includes/calendars.php:242
+#: includes/calendars.php:242
+msgid "September"
+msgstr ""
+
+#: dist/includes/calendars.php:243
+#: includes/calendars.php:243
+msgid "October"
+msgstr ""
+
+#: dist/includes/calendars.php:244
+#: includes/calendars.php:244
+msgid "November"
+msgstr ""
+
+#: dist/includes/calendars.php:245
+#: includes/calendars.php:245
+msgid "December"
+msgstr ""
+
+#: dist/includes/calendars.php:254
+#: includes/calendars.php:254
+msgid "Monday"
+msgstr ""
+
+#: dist/includes/calendars.php:255
+#: includes/calendars.php:255
+msgid "Tuesday"
+msgstr ""
+
+#: dist/includes/calendars.php:256
+#: includes/calendars.php:256
+msgid "Wednesday"
+msgstr ""
+
+#: dist/includes/calendars.php:257
+#: includes/calendars.php:257
+msgid "Thursday"
+msgstr ""
+
+#: dist/includes/calendars.php:258
+#: includes/calendars.php:258
+msgid "Friday"
+msgstr ""
+
+#: dist/includes/calendars.php:259
+#: includes/calendars.php:259
+msgid "Saturday"
+msgstr ""
+
+#: dist/includes/calendars.php:260
+#: includes/calendars.php:260
+msgid "Sunday"
+msgstr ""
+
+#: dist/includes/calendars.php:322
+#: dist/includes/calendars.php:413
+#: includes/calendars.php:322
+#: includes/calendars.php:413
+msgid "Previous month"
+msgstr ""
+
+#: dist/includes/calendars.php:323
+#: dist/includes/calendars.php:414
+#: includes/calendars.php:323
+#: includes/calendars.php:414
+msgid "Next month"
+msgstr ""
+
+#: dist/includes/calendars.php:324
+#: dist/includes/calendars.php:415
+#: includes/calendars.php:324
+#: includes/calendars.php:415
+msgid "Current month"
+msgstr ""
+
+#: dist/includes/calendars.php:416
+#: includes/calendars.php:416
+msgid "all day"
+msgstr ""
+
+#: dist/includes/cron.php:30
+#: includes/cron.php:30
+msgid "Every minute"
+msgstr ""
+
+#: dist/includes/cron.php:35
+#: includes/cron.php:35
+msgid "Every 15 minutes"
+msgstr ""
+
+#: dist/includes/cron.php:40
+#: includes/cron.php:40
+msgid "Every 30 minutes"
+msgstr ""
+
+#: dist/includes/cron.php:101
+#: includes/cron.php:101
+msgid "Update started."
+msgstr ""
+
+#. translators: %s is a WordPress error message
+#: dist/includes/cron.php:108
+#: includes/cron.php:108
+msgid "Download of calendar failed with message: %s."
+msgstr ""
+
+#. translators: %d is an HTTP status code
+#: dist/includes/cron.php:120
+#: includes/cron.php:120
+msgid "Download of calendar failed with HTTP status code %d."
+msgstr ""
+
+#. translators: %s is a WordPress error message
+#: dist/includes/cron.php:132
+#: includes/cron.php:132
+msgid "Calendar contents could not be retrieved. Error message: %s."
+msgstr ""
+
+#: dist/includes/cron.php:142
+#: includes/cron.php:142
+msgid "Failed to open calendar file to write to."
+msgstr ""
+
+#: dist/includes/cron.php:150
+#: includes/cron.php:150
+msgid "Failed to write to calendar file."
+msgstr ""
+
+#. translators: %1$d is the number of bytes written to a file. %2$d is the number of bytes that should have been written to a file.
+#: dist/includes/cron.php:161
+#: includes/cron.php:161
+msgid "Calendar contents incompletely written: %1$d of %2$d bytes"
+msgstr ""
+
+#: dist/includes/cron.php:168
+#: includes/cron.php:168
+msgid "Calendar updated successfully."
+msgstr ""
+
+#: dist/includes/settings.php:34
+#: includes/settings.php:34
+msgid "Calendar settings"
+msgstr ""
+
+#: dist/includes/settings.php:55
+#: includes/settings.php:55
+msgid "Timezone"
+msgstr ""
+
+#: dist/includes/settings.php:93
+#: includes/settings.php:93
+msgid "Update frequency"
+msgstr ""
+
+#. translators: %1$s is a date and time string of the next automated calendar update
+#: dist/includes/settings.php:119
+#: includes/settings.php:119
+msgid "Next calendar update at %1$s"
+msgstr ""
+
+#: dist/includes/settings.php:159
+#: includes/settings.php:159
+msgid "Calendar Subscriptions"
+msgstr ""
+
+#: dist/includes/settings.php:191
+#: includes/settings.php:191
+msgid "URL"
+msgstr ""
+
+#: dist/includes/settings.php:192
+#: includes/settings.php:192
+msgid "Title"
+msgstr ""
+
+#: dist/includes/settings.php:194
+#: includes/settings.php:194
+msgid "To remove a subscription delete the URL or the title and save the settings."
+msgstr ""
+
+#: dist/includes/settings.php:207
+#: includes/settings.php:207
+msgid "Calendar properties filters"
+msgstr ""
+
+#. translators: %1$s and %3$s are the opening of an HTML link tag, %2$s closes the tag
+#: dist/includes/settings.php:212
+#: includes/settings.php:212
+msgid "Filters are applied to the user defined property of a calendar event. The filter \"pattern\" is matched to the property content and \"replacement\" replaces the matches.This functionality is implemented using the PHP function %1$spreg_replace%2$s. Please refer to the %3$sPHP documentation%2$s for more information."
+msgstr ""
+
+#: dist/includes/settings.php:244
+#: includes/settings.php:244
+msgid "Properties filters"
+msgstr ""
+
+#: dist/includes/settings.php:257
+#: includes/settings.php:257
+msgid "Event property"
+msgstr ""
+
+#: dist/includes/settings.php:258
+#: includes/settings.php:258
+msgid "Search pattern"
+msgstr ""
+
+#: dist/includes/settings.php:259
+#: includes/settings.php:259
+msgid "Replacement"
+msgstr ""
+
+#: dist/includes/settings.php:261
+#: includes/settings.php:261
+msgid "To remove a filter delete its event property or search pattern and save the settings."
+msgstr ""
