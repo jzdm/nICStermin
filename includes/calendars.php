@@ -110,14 +110,11 @@ class Calendars
 		$dtstart_utc = \DateTime::createFromFormat('U', sprintf('%d', $event->dtstart_array[2]) , new \DateTimeZone('UTC'));
 		
 		// filter for all-day events
-		if (isset($event->x_microsoft_cdo_alldayevent)) {
-			
-			$allday = strcasecmp($event->x_microsoft_cdo_alldayevent,'TRUE') === 0 ? true : false;
-			
-			if ($allday) {
-				$dtend_utc = clone $dtstart_utc;
-				$dtend_utc->modify('+1 day');
-			}
+		$allday = strcasecmp($event->x_microsoft_cdo_alldayevent,'TRUE') === 0 ? true : false;
+		
+		if ($allday) {
+			$dtend_utc = clone $dtstart_utc;
+			$dtend_utc->modify('+1 day');
 		}
 		else {
 			// filter for all-day event by NextCloud Calendar
@@ -136,16 +133,16 @@ class Calendars
 		
 		
 		$evt = [
-			"calendar_title" => $calendar_title,   // title of calendar
-			"summary"        => $event->summary,   // description ("summary") of event
-			"dtstart"        => $dtstart_utc,      // event starting time in UTC
-			"dtend"          => $dtend_utc,        // event ending time in UTC
-			"description"    => isset($event->description) ? $event->description : '',
-			"location"       => isset($event->location)    ? $event->location    : '',
-			"status"         => isset($event->status)      ? $event->status      : '',
-			"url"            => isset($event->url)         ? $event->url         : '',
-			"allday"         => $allday,
-			"raw"            => $event
+			"calendar_title" => $calendar_title,     // title of calendar
+			"summary"        => $event->summary,     // title ("summary") of event
+			"dtstart"        => $dtstart_utc,        // event starting time in UTC
+			"dtend"          => $dtend_utc,          // event ending time in UTC
+			"description"    => $event->description, // detailed description of event
+			"location"       => $event->location,
+			"status"         => $event->status,
+			"url"            => $event->url,
+			"allday"         => $allday,             // boolean: true if is all-day event
+			"raw"            => $event               // raw event data from "PHP ICS Parser"
 		];
 		
 		$event_filtered = self::apply_filters($evt);
@@ -161,12 +158,6 @@ class Calendars
 	public static function apply_filters($event)
 	{
 		$filters = self::$filters;
-		
-		/*
-		$filters = [
-				['ical_field' => 'location', 'pattern' => '/((?:(Freie evangelische )?Bibelgemeinde Meine( e\.V\.)?.*)|(?:Ortholzweg 2,?(38527\s)?Meine))/i', 'replacement' => '']
-			];
-		*/
 		
 		foreach ($filters as $key => $filter) {
 			$property    = $filter['ical_field'];
