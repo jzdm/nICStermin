@@ -1,9 +1,9 @@
 <div>
 {% for month in events %}
-	<table class="table-fixed">
+	<table class="nit-table-fixed">
 		<thead>
 			<tr>
-				<th style="width:15%;" class="px-0 py-2 text-left"><h3>{{ month.month_name }} {{month.year}}</h3></th>
+				<th style="width:15%;" class="nit-px-0 nit-py-2 nit-text-left"><h3>{{ month.month_name }} {{month.year}}</h3></th>
 				<th style="width:25%;"></th>
 				<th style="width:60%;"></th>
 			</tr>
@@ -20,14 +20,14 @@
 				{% endif %#}
 			
 				{% set dayNumber =  (event.dtstart|date('N')) - 1 %}
-				<tr class="even:bg-gray-100 align-top">
-					<td class="border border-slate-300">
-						<div class="px-4 py-2">
-							<div class="inline-block w-4">{{dayNamesShort[dayNumber]}}</div>
-							<div class="inline-block">{{event.dtstart|date('d.m.')}}</div>
+				<tr class="even:nit-bg-gray-100 nit-align-top">
+					<td class="nit-border-solid nit-border nit-border-slate-300">
+						<div class="nit-px-4 nit-py-2">
+							<div class="nit-inline-block nit-w-4">{{dayNamesShort[dayNumber]}}</div>
+							<div class="nit-inline-block">{{event.dtstart|date('d.m.')}}</div>
 						</div>
 					</td>
-					<td class="border border-slate-300 px-4 py-2">
+					<td class="nit-border-solid nit-border nit-border-slate-300 nit-px-4 nit-py-2">
 						{# column: start/end time #}
 						{% if event.allday %}
 							{{str_AllDayEvent}}
@@ -35,21 +35,21 @@
 							{{event.dtstart|date('H:i')}} {% if not emphasized %}- {{event.dtend|date('H:i')}} {% endif %}Uhr
 						{% endif %}
 					</td>
-					<td class="border border-slate-300 px-4 py-2">
-						<div class="group">
-							<div class="flex justify-between">
+					<td class="nit-border-solid nit-border nit-border-slate-300 nit-px-4 nit-py-2">
+						<div class="nit-group">
+							<div class="nit-flex nit-justify-between">
 								<div>{{emphasizer[0]|raw}}{{event.summary|raw}}{{emphasizer[1]|raw}}</div>
 							</div>
 							{% set spacer = false %}
 							{% if event.description|length %}
-								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><i class="fas fa-info-circle  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.description}}</div>
+								<div class="nit-text-xs nit-text-gray-600 nit-pl-3 {% if not spacer %} nit-pt-1 {% endif %}"><i class="fas fa-info-circle  nit-inline-flex nit-w-3 nit-h-3 nit-items-center nit-justify-center nit-text-center"></i> {{event.description}}</div>
 								{% set spacer = true %}
 							{% endif %}
 							{% if event.url|length %}
-								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><a href="{{event.url}}" target="_blank"><i class="fas fa-external-link-alt  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.url}}</a></div>
+								<div class="nit-text-xs nit-text-gray-600 nit-pl-3 {% if not spacer %} nit-pt-1 {% endif %}"><a href="{{event.url}}" target="_blank"><i class="fas fa-external-link-alt  nit-inline-flex nit-w-3 nit-h-3 nit-items-center nit-justify-center nit-text-center"></i> {{event.url}}</a></div>
 							{% endif %}
 							{% if event.location|length %}
-								<div class="text-xs text-gray-600 pl-3 {% if not spacer %} pt-1 {% endif %}"><i class="fas fa-map-marker-alt  inline-flex w-3 h-3 items-center justify-center text-center"></i> {{event.location | raw}}</div>
+								<div class="nit-text-xs nit-text-gray-600 nit-pl-3 {% if not spacer %} nit-pt-1 {% endif %}"><i class="fas fa-map-marker-alt  nit-inline-flex nit-w-3 nit-h-3 nit-items-center nit-justify-center nit-text-center"></i> {{event.location | raw}}</div>
 							{% endif %}
 						</div>
 					</td>

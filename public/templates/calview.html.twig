@@ -1,24 +1,24 @@
 <!-- Calendar Wrapping -->
-<div class="overflow-hidden">
+<div class="nit-overflow-hidden">
 	<!-- Calendar Header -->
-	<div class="flex items-center justify-between py-2">
+	<div class="nit-flex nit-items-center nit-justify-between nit-py-2">
 		<div>
-			<span class="text-lg font-bold text-gray-800">{{monthName}}</span>
-			<span class="ml-1 text-lg text-gray-600 font-normal">{{year}}</span>
+			<span class="nit-text-lg nit-font-bold nit-text-gray-800">{{monthName}}</span>
+			<span class="nit-ml-1 nit-text-lg nit-text-gray-600 nit-font-normal">{{year}}</span>
 		</div>
 		<div class="" style="padding-top: 2px;">
 			<a href="?date={{year}}-{{month-1 % 12}}-01" title="{{str_prevMonth}}" style="text-decoration: none;">
-				<svg class="h-6 w-6 text-gray-500 inline-flex leading-none transition duration-1000 hover:text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg class="nit-h-6 nit-w-6 nit-text-gray-500 nit-inline-flex nit-leading-none nit-transition nit-duration-1000 hover:nit-text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
 				</svg>
 			</a>
 			<a href="?date=" title="{{str_curMonth}}" style="text-decoration: none;">
-				<svg class="h-6 w-6 text-gray-500 inline-flex leading-none transition-colors duration-1000 hover:text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg class="nit-h-6 nit-w-6 nit-text-gray-500 nit-inline-flex nit-leading-none nit-transition-colors nit-duration-1000 hover:nit-text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<ellipse cx="12" cy="12" rx="5" ry="5" stroke-width="2" style="fill:none;" />
 				</svg>
 			</a>
 			<a href="?date={{year}}-{{month+1 % 12}}-01" title="{{str_nextMonth}}" style="text-decoration: none;">
-				<svg class="h-6 w-6 text-gray-500 inline-flex leading-none transition duration-500 hover:text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<svg class="nit-h-6 nit-w-6 nit-text-gray-500 nit-inline-flex nit-leading-none nit-transition nit-duration-500 hover:nit-text-blue-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
 				</svg>
 			</a>
@@ -28,31 +28,31 @@
 	<!-- Calendar Body -->
 	<!--<div class="-mx-1 -mb-1">-->
 	<div>
-		<div class="grid grid-cols-7">
+		<div class="nit-grid nit-grid-cols-7">
 			{% for dayName in dayNamesShort %}
-				<div class="px-4 py-2">{{dayName}}</div>
+				<div class="nit-px-4 nit-py-2">{{dayName}}</div>
 			{% endfor %}
 		</div>
 		{% set day = 1 %}
-		<div class="flex flex-col">
+		<div class="nit-flex nit-flex-col">
 		{% for row, eventWeek in events %}
-			<div class="cal-week grid grid-cols-7 h-32 border-l border-t">
+			<div class="nit-cal-week nit-grid nit-grid-cols-7 nit-h-32 nit-border-solid nit-border-l nit-border-t">
 				{% for col, eventDay in eventWeek %}
 					{# Fill with empty days if needed #}
 					{% if (day == 1) and (weekStart > 1) %}
 					{% for i in range(1,weekStart-1) %}
-						<div class="px-2 pt-2 border-r border-b relative"></div>
+						<div class="nit-px-2 nit-pt-2 nit-border-solid nit-border nit-border-r nit-border-b nit-relative"></div>
 					{% endfor %}
 					{% endif %}
 					
 					{# show calendar day, fill with events #}
-					<div class="cal-day px-2 pt-2 border-r border-b relative">
-						<div class="inline-flex w-6 h-6 items-center justify-center text-center leading-none rounded-full text-gray-700 {% if day == today %} bg-blue-200 {% endif %}">{{ day }}</div>
-						<div class="overflow-y-auto mt-1  h-20">
+					<div class="nit-cal-day nit-px-2 nit-pt-2 nit-border-solid nit-border nit-border-r nit-border-b nit-relative">
+						<div class="nit-inline-flex nit-w-6 nit-h-6 nit-items-center nit-justify-center nit-text-center nit-leading-none nit-rounded-full nit-text-gray-700 {% if day == today %} nit-bg-blue-200 {% endif %}">{{ day }}</div>
+						<div class="nit-overflow-y-auto nit-mt-1  nit-h-20">
 						{% for calid, event in eventDay %}
-							<div class="px-2 py-1 rounded-lg mt-1 overflow-hidden border border-blue-200 text-blue-800 bg-blue-100">
-								<span class="text-xs">{{event.dtstart|date('H:i', timezone)}}</span>
-								<span class="text-sm truncate">{{ event.summary | raw }}</span>
+							<div class="nit-px-2 nit-py-1 nit-rounded-lg nit-mt-1 nit-overflow-hidden nit-border-solid nit-border nit-border-blue-200 nit-text-blue-800 nit-bg-blue-100">
+								<span class="nit-text-xs">{{event.dtstart|date('H:i', timezone)}}</span>
+								<span class="nit-text-sm nit-truncate">{{ event.summary | raw }}</span>
 							</div>
 						{% endfor %}
 						</div>
