@@ -3,7 +3,7 @@
  * Plugin Name: nICStermin
  * Plugin URI:  https://nicstermin.de
  * Description: ICS calendar subscription and display on WordPress websites
- * Version:     0.1.1
+ * Version:     0.1.2
  * Author:      jzdm
  * Author URI:  https://jzdm.de
  * License:     GPLv3
@@ -12,7 +12,7 @@
  * Domain Path: /languages
  */
 
-define( 'NICSTERMIN_PLUGIN_VERSION', '0.1.1');
+define( 'NICSTERMIN_PLUGIN_VERSION', '0.1.2');
 define( 'NICSTERMIN_PLUGIN_URL',  plugin_dir_url(  __FILE__ ) );
 define( 'NICSTERMIN_PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 
