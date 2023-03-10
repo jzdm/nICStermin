@@ -8,18 +8,26 @@ With the help of user-defined filters it is possible to change properties of an 
 
 ## Usage
 
-After adding a calendar subscription use one of the two available **shortcodes**:
+After adding a calendar subscription use one of the two available calendar view using a **shortcode**:
 
-- ### ```[nicstermin_List]```
+### List view
+
+```
+[nicstermin view="list"]
+```
 
 This shortcodes inserts a list-view of all events of the current month.
 The shortcode as an optional **parameter** ```range``` which can either be a single decimal value or a comma separated list of decimal values.
 
-```[nicstermin_List range="2"]``` will insert the list of events for two months, starting with the current month.
+```[nicstermin view="list" range="2"]``` will insert the list of events for two months, starting with the current month.
 
-```[nicstermin_List range="-2, 0, 3, 4"]``` shows four months in total, the month before the last month (-2), current month (0), third and fourth month from current one.
+```[nicstermin view="list" range="-2, 0, 3, 4"]``` shows four months in total, the month before the last month (-2), current month (0), third and fourth month from current one.
 
-- ### ```[nicstermin_Month]```
+### Month view
+
+```
+[nicstermin view="month"]
+```
 
 This shortcode inserts a typical 2D representation (weeks as rows, weekdays as columns) of the current month. So far this is mostly for demonstration purposes and far from finished.
 

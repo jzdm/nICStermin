@@ -31,6 +31,8 @@ class Calendars
 	
 	public static function register_shortcodes()
 	{
+		add_shortcode( 'nicstermin', [__CLASS__, 'shortcode']);
+		
 		add_shortcode( 'nicstermin_Month', [__CLASS__, 'shortcode_ViewMonthly']);
 		
 		add_shortcode( 'nicstermin_List', [__CLASS__, 'shortcode_ViewList']);
@@ -254,6 +256,19 @@ class Calendars
 		return $day_names[intval($day_number)];
 	}
 	
+	
+	public static function shortcode($atts, $content = '')
+	{
+		switch (strtolower($atts['view']))
+		{
+			case 'month':
+				return Calendars::shortcode_ViewMonthly($atts, $content);
+				break;
+			default:
+				return Calendars::shortcode_ViewList($atts, $content);
+				break;
+		}
+	}
 
 	
 	public static function shortcode_ViewMonthly($atts, $content = '')
